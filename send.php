@@ -15,7 +15,7 @@ $to = 'info@'.$site;
 //В переменную $token нужно вставить id вашего бота
 $token = "6660986001:AAEIFvCvFCeeZf9wzeSRk9e0uG02Rx37TuA";
 //В chat_id вставляем id группы
-$chat_id = "1842050958";
+$chat_id = "-1842050958";
 
 var_dump($_POST);
 if ( ! empty( $_POST ) ) {
