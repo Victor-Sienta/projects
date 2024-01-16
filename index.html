@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Offside&family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>loonGo</title>
+
+</head>
+<body>
+
+    <!-- header -->
+    <header class="page-header">
+            <div class="container">
+                <div class="page-header__row">
+                    <img src="./img/logo.svg" alt="loonGo" class="page-header__logo" width="160" height="106">
+                    <nav class="page-header__nav">
+                        <ul class="page-header__menu">
+                            <li><a href="#">Проекты</a></li>
+                            <li><a href="#">О нас</a></li>
+                            <li><a href="#">Оставить заявку</a></li>
+                        </ul>
+                    </nav>
+                    <a href="" class="page-header__contacts">Контакты</a>
+                </div>
+            </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- projects -->
+    <section class="projects">
+        <div class="container">
+            <div class="projects__content">
+                <div class="projects__first-block" >
+                    <div class="box1">
+                        <span class="first-block__text">Racer Revolution</span>
+                    </div>
+                </div>
+                <div class="projects__second-block">
+                    <div class="box1">
+                        <span class="second-block__text">Rogue A.I. Uprising</span>
+                    </div>
+                </div>
+                <div class="projects__third-block">
+                    <div class="box1">
+                        <span class="third-block__text">Gravity Shifters</span>
+                    </div>
+                </div>
+                <div class="projects__fourth-block">
+                    <div class="box1">
+                        <span class="fourth-block__text">Mind Mosaics</span>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </section>
+    <!-- projects-end -->
+    <php? include `send.php`; ?>
+    <form class="consultation__form">
+        <input type="text" name="name" placeholder="Ваше имя*" required>
+        <input type="tel" name="phone" placeholder="Ваш телефон*" required>
+        <textarea name="question" placeholder="Сообщение" required></textarea>
+        <input type="submit" value="Получить консультацию">
+    </form>
+
+    <!-- footer -->
+    <footer class="footer">
+        <!-- <div class="container"> -->
+            <div class="copyright">
+                © 2017-2024. Все права защищены. Использование материалов с сайта без разрешения запрещено!
+            </div>     
+            <div class="footer__link">
+                <a href="https://telegram.me/share/url?url=ВАШ_URL&text=ТЕКСТ" class="footer__link-img tg">
+                    <img src="./img/footer/telegram-lg.png" alt="telegram">
+                </a>
+                <a href="https://vk.com/" class="footer__link-img vk">
+                    <img src="./img/footer/vk-lg.png" alt="vk">
+                </a>
+            </div>
+
+            <script>
+                const siteForm = document.querySelector('.consultation__form');
+                siteForm.addEventListener('submit',async (e) => {
+                    e.preventDefault();
+                    const item = e.target;
+                    const submitBtn =  item.querySelector('input[type=submit]');
+                    submitBtn.setAttribute('disabled', 'true');
+            
+                    let response = await fetch('/send.php', {
+                        method: 'POST',
+                        body: new FormData(item)
+                    })
+                        .then(data => {
+                            item.reset();
+                        })
+                        .catch((error) => console.log("ошибка!", error))
+                        .finally(() => {
+                            submitBtn.removeAttribute('disabled');
+                        });
+                })
+            </script>
+        <!-- </div> -->
+    </footer>
+    <!-- footer-end -->
+</body>
+</html>
