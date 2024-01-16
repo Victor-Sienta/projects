@@ -2,7 +2,7 @@
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     exit();
 }
-debug_to_console("Test");
+echo ("Test");
 // Ваш сайт
 $site = 'https://victor-sienta.github.io/projects/';
 // Тема письма
