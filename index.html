@@ -81,7 +81,7 @@
                     submitBtn.setAttribute('disabled', 'true');
                     console.log('Снег');
             
-                    let response = await fetch('/send.php', {
+                    let response = await fetch('./send.php', {
                         method: 'POST',
                         body: new FormData(item)
                     })
