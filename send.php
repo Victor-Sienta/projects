@@ -34,8 +34,8 @@ if ( ! empty( $_POST ) ) {
     $txt .= "Сообщение: $question";
 
     try {
-        $headers = 'From: form@'.$site."\r\n".
-                'X-Mailer: PHP/' . phpversion();
+        // $headers = 'From: form@'.$site."\r\n".
+        //         'X-Mailer: PHP/' . phpversion();
 
         //Передаем сообщение по почте
 		// $mail = mail( $to, $subject, $message, $headers );
