@@ -74,9 +74,9 @@
                         method: 'POST',
                         body: new FormData(item)
                     })
-                        .then(data => {
-                            item.reset();
-                        })
+                        // .then(data => {
+                        //     item.reset();
+                        // })
                         .catch((error) => console.log("ошибка!", error))
                         .finally(() => {
                             submitBtn.removeAttribute('disabled');
