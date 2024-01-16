@@ -11,31 +11,6 @@
     <link rel="stylesheet" href="./css/node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>loonGo</title>
-    <script>
-        window.addEventListener("DOMContentLoaded", (event) => {
-            const siteForm = document.querySelector('.consultation__form');
-            if (siteForm) {
-                siteForm.addEventListener('submit',async (e) => {
-                    e.preventDefault();
-                    const item = e.target;
-                    const submitBtn =  item.querySelector('input[type=submit]');
-                    submitBtn.setAttribute('disabled', 'true');
-            
-                    let response = await fetch('/send.php', {
-                        method: 'POST',
-                        body: new FormData(item)
-                    })
-                        .then(data => {
-                            item.reset();
-                        })
-                        .catch((error) => console.log("ошибка!", error))
-                        .finally(() => {
-                            submitBtn.removeAttribute('disabled');
-                        });
-                })
-            }
-        });
-    </script>
 
 </head>
 <body>
@@ -92,6 +67,31 @@
         <textarea name="question" placeholder="Сообщение" required></textarea>
         <input type="submit" value="Получить консультацию">
     </form>
+    <script>
+        window.addEventListener("DOMContentLoaded", (event) => {
+            const siteForm = document.querySelector('.consultation__form');
+            if (siteForm) {
+                siteForm.addEventListener('submit',async (e) => {
+                    e.preventDefault();
+                    const item = e.target;
+                    const submitBtn =  item.querySelector('input[type=submit]');
+                    submitBtn.setAttribute('disabled', 'true');
+            
+                    let response = await fetch('/send.php', {
+                        method: 'POST',
+                        body: new FormData(item)
+                    })
+                        .then(data => {
+                            item.reset();
+                        })
+                        .catch((error) => console.log("ошибка!", error))
+                        .finally(() => {
+                            submitBtn.removeAttribute('disabled');
+                        });
+                })
+            }
+        });
+    </script>
 
     <!-- footer -->
     <footer class="footer">
