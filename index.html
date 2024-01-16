@@ -84,8 +84,7 @@
                     let response = await fetch('/send.php', {
                         method: 'POST',
                         body: new FormData(item)
-                    });
-                    console.log("Запрос") 
+                    })
                         .then(data => {
                             console.log('Зима');
                             item.reset();
