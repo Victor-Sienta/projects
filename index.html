@@ -66,6 +66,7 @@
         window.onload=function(){
             const siteForm = document.querySelector('.consultation__form');
             if (siteForm) {
+                console.log('Успех');
                 siteForm.addEventListener('submit',async (e) => {
                     e.preventDefault();
                     const item = e.target;
