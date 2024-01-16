@@ -73,25 +73,25 @@
             const siteForm = document.querySelector('.consultation__form');
             console.log('второе');
             if (siteForm) {
-                console.log('Успех');
+                console.log('третье');
                 siteForm.addEventListener('submit',async (e) => {
                     e.preventDefault();
                     const item = e.target;
                     const submitBtn =  item.querySelector('input[type=submit]');
                     submitBtn.setAttribute('disabled', 'true');
-                    console.log('Снег');
+                    console.log('четвертое');
             
                     let response = await fetch('/send.php', {
                         method: 'POST',
                         body: new FormData(item)
                     })
                         .then(data => {
-                            console.log('Зима');
+                            console.log('пятое');
                             item.reset();
                         })
                         .catch((error) => console.log("ошибка!", error))
                         .finally(() => {
-                            console.log('Солнце');
+                            console.log('шестое');
                             submitBtn.removeAttribute('disabled');
                         });
                 });
