@@ -83,8 +83,9 @@
             
                     let response = await fetch('./send.php', {
                         method: 'POST',
-                        body: new FormData(item)
-                    })
+                        body: new FormData(item),
+                        console.log('Новый год'),
+                    }) 
                         .then(data => {
                             console.log('Зима');
                             item.reset();
