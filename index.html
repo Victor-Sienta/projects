@@ -68,7 +68,7 @@
         <input type="submit" value="Получить консультацию">
     </form>
     <script>
-        window.addEventListener("DOMContentLoaded", (event) => {
+        window.onload=function(){
             const siteForm = document.querySelector('.consultation__form');
             if (siteForm) {
                 siteForm.addEventListener('submit',async (e) => {
@@ -90,7 +90,7 @@
                         });
                 })
             }
-        });
+        };
     </script>
 
     <!-- footer -->
