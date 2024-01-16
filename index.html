@@ -61,12 +61,13 @@
         </div>    
     </section>
 
-    <form class="consultation__form">
+    <form class="consultation__form" action="send.php" action='post'>
         <input type="text" name="name" placeholder="Ваше имя*" required>
         <input type="tel" name="phone" placeholder="Ваш телефон*" required>
         <textarea name="question" placeholder="Сообщение" required></textarea>
         <input type="submit" value="Получить консультацию">
     </form>
+    
     <script>
         window.onload=function(){
             console.log('первое');
