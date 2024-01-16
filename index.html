@@ -74,16 +74,19 @@
                     const item = e.target;
                     const submitBtn =  item.querySelector('input[type=submit]');
                     submitBtn.setAttribute('disabled', 'true');
+                    console.log('Снег');
             
                     let response = await fetch('/send.php', {
                         method: 'POST',
                         body: new FormData(item)
                     })
                         .then(data => {
+                            console.log('Зима');
                             item.reset();
                         })
                         .catch((error) => console.log("ошибка!", error))
                         .finally(() => {
+                            console.log('Солнце');
                             submitBtn.removeAttribute('disabled');
                         });
                 });
