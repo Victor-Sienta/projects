@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 }
 
 // Ваш сайт
-$site = 'file:///C:/Users/%D0%91%D0%B0%D0%BA%D0%BE%D1%82%D0%B8%D0%BD/Desktop/%D0%A3%D1%87%D0%B5%D0%B1%D0%B0%2024/%D0%9E%D0%B1%D1%89%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82/%D0%9E%D0%B1%D1%89%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B%2016.01.24/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B%2016.01.24/index.html';
+$site = 'https://victor-sienta.github.io/projects/';
 // Тема письма
 $subject = 'Заявка с сайта '.$site.'!';
 // От кого
